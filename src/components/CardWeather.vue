@@ -4,7 +4,7 @@
     <button class="card-weather__remove" @click="clear"></button>
     <div class="card-weather__body">
       <div class="card-weather__masthead">
-        <div class="card-weather__image" :style="`background-image: url(/img/weathers/${forecast.weather[0].id}.svg)`">
+        <div class="card-weather__image" :style="`background-image: url(./img/weathers/${forecast.weather[0].id}.svg)`">
         </div>
         <div class="card-weather__summary">
           <div class="card-weather__state">{{ forecast.weather[0].main }}</div>
