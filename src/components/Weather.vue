@@ -12,7 +12,7 @@
     <form action="#0" @submit.prevent="getByName" class="form">
       <div class="form__group">
         <input type="text" class="form__input weather__input" v-model.trim="location" placeholder="enter the city">
-        <button class="form__btn">show</button>
+        <button class="form__btn" :disabled="loading">show</button>
       </div>
     </form>
 
@@ -77,6 +77,8 @@ export default {
       }
     },
     async geoLocation(latitude, longitude) {
+      if (this.loading) return;
+
       this.loading = true;
       try {
         this.forecast = await API.getForecast(latitude, longitude, this.units);
@@ -93,6 +95,7 @@ export default {
 
     },
     async getByName(e) {
+      if (this.loading) return;
       if (!this.location) return;
 
       this.loading = true;
