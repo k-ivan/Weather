@@ -28,7 +28,7 @@ export default {
   props: {
     forecast: Object,
     hasImage: {
-      type: String,
+      type: Object,
       default: null
     }
   },
